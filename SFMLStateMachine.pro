@@ -19,7 +19,8 @@ SOURCES += main.cpp \
     movestate.cpp \
     minestate.cpp \
     Vector2.cpp \
-    steeringbehaviours.cpp
+    steeringbehaviours.cpp \
+    graphicfigure.cpp
 
 include(deployment.pri)
 qtcAddDeployment()
@@ -33,5 +34,6 @@ HEADERS += \
     movestate.h \
     minestate.h \
     SteeringBehaviors.h \
-    Vector2.h
+    Vector2.h \
+    graphicfigure.h
 

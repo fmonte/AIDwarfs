@@ -17,8 +17,8 @@ public:
 
 	Vector2 GetTarget()const{ return m_target; }
 	
-	void SetTarget(const Vector2 target);
-	void SetEvader(Agent* evader);
+    void SetTarget(const Vector2 target) {m_target = target;}
+    void SetEvader(Agent* evader);
 
 	void SetNeighbors(std::vector<Agent*> nNeighbors) { m_neighbors = nNeighbors; }
 	void SetObstacles(std::vector<Place*> nObstacles) { m_obstacles = nObstacles; }

@@ -3,7 +3,7 @@
 
 Agent::Agent()
 {
-
+vehicle = new SteeringBehaviors(this);
 }
 
 Agent::~Agent()

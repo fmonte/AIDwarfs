@@ -21,7 +21,6 @@ class Dwarf : public Agent
 {
 private:
     float gatheringSpeed;
-    float movingSpeed;
     float stamina;
     float maxStamina;
     float oreSack;
@@ -31,7 +30,6 @@ private:
     places place; //where the dwarf is directed
     journey step;
     StateMachine<Dwarf> * brain;
-    SteeringBehaviors * vehicle;
 
 public:
     Dwarf(sf::Text* qText, sf::Text* oText, float gatherSpeed = 1.0f, float moveSpeed = 1.0f,
@@ -39,16 +37,14 @@ public:
     ~Dwarf();
     void changeState(State<Dwarf> * state); //only it's brain state
     const float getGatheringSpeed() const {return gatheringSpeed;}
-    const float getMovingSpeed() const {return movingSpeed;}
     const float getStamina() const {return stamina;}
     const float getOreSack() const {return oreSack;}
     const places getPlace() const {return place;}
     const journey getStep() const {return step;}
     const float getMaxStamina() const {return maxStamina;}
     sf::Text* getQuestText() const {return questText;}
-    sf::Text* getOreText() const {return oreText;}
+    sf::Text* getOreText() const {return oreText;}    
     void setGatheringSpeed(const float s) {gatheringSpeed = s;}
-    void setMovingSpeed(const float s) {movingSpeed = s;}
     void setStamina(const float s) {stamina = s;}
     void setOreSack(const float s) {oreSack = s;}
     void setPlace(const places p) {place = p;}
