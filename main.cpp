@@ -1,6 +1,11 @@
 #include <iostream>
 #include <ctime>
 #include "dwarf.h"
+#include "sheep.h"
+#include "mine.h"
+#include "fense.h"
+#include "dog.h"
+
 #include "sleepstate.h"
 #include <SFML/Graphics.hpp>
 
@@ -8,9 +13,45 @@ using namespace std;
 
 void drawDwarf(sf::RenderWindow* window, Dwarf * d){
     sf::CircleShape circle(20);
-    circle.setFillColor(sf::Color(255,255,0));
+    circle.setFillColor(sf::Color(0,0,255));
     circle.setPosition(d->getPosition().x, d->getPosition().y);
     window->draw(circle);
+}
+
+void drawSheep(sf::RenderWindow* window, Sheep * s){
+    sf::RectangleShape rectangle(sf::Vector2f(40, 20));
+    rectangle.setFillColor(sf::Color(255,255,255));
+    rectangle.setPosition(s->getPosition().x, s->getPosition().y);
+    window->draw(rectangle);
+}
+
+void drawMine(sf::RenderWindow* window, Mine* m){
+    sf::CircleShape octagon(400, 8);
+    octagon.setFillColor(sf::Color(255,0,0));
+    octagon.setPosition(m->getPosition().x, m->getPosition().y);
+    window->draw(octagon);
+}
+
+void drawFence(sf::RenderWindow* window, Fence* f){
+    sf::ConvexShape convex;
+    convex.setPointCount(5);
+
+    convex.setPoint(0, sf::Vector2f(0, 100));
+    convex.setPoint(1, sf::Vector2f(0, 1100));
+    convex.setPoint(2, sf::Vector2f(1000, 1100));
+    convex.setPoint(3, sf::Vector2f(2000, 600));
+    convex.setPoint(4, sf::Vector2f(1000, 100));
+
+    convex.setFillColor(sf::Color(0,255,0));
+    convex.setPosition(f->getPosition().x, f->getPosition().y);
+    window->draw(convex);
+}
+
+void drawDog(sf::RenderWindow* window, Dog* d){
+    sf::CircleShape esagon(20, 6);
+    esagon.setFillColor(sf::Color(153,76,0));
+    esagon.setPosition(d->getPosition().x, d->getPosition().y);
+    window->draw(esagon);
 }
 
 int main()
