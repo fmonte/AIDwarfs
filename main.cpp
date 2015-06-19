@@ -6,6 +6,13 @@
 
 using namespace std;
 
+void drawDwarf(sf::RenderWindow* window, Dwarf * d){
+    sf::CircleShape circle(20);
+    circle.setFillColor(sf::Color(255,255,0));
+    circle.setPosition(d->getPosition().x, d->getPosition().y);
+    window->draw(circle);
+}
+
 int main()
 {
     /*  every dwarf has different: float gatherSpeed, float moveSpeed,
@@ -305,6 +312,7 @@ int main()
             // clear the window with black color
 
 
+            drawDwarf(&window, Dotto);
             window.draw(*Dotto->getQuestText());
             window.draw(*Dotto->getOreText());
             window.draw(*Eolo->getQuestText());

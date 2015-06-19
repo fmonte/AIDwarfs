@@ -4,6 +4,7 @@
 #include "statemachine.h"
 #include "SFML/Graphics.hpp"
 #include "SteeringBehaviors.h"
+#include "Vector2.h"
 
 enum places{
     mine,
@@ -33,7 +34,7 @@ private:
 
 public:
     Dwarf(sf::Text* qText, sf::Text* oText, float gatherSpeed = 1.0f, float moveSpeed = 1.0f,
-          float oreCapacity = 50.0f, float MaxStamina = 100.0f, places Place = places::home);
+          float oreCapacity = 50.0f, float MaxStamina = 100.0f, Vector2 pos = Vector2::ZERO, places Place = places::home);
     ~Dwarf();
     void changeState(State<Dwarf> * state); //only it's brain state
     const float getGatheringSpeed() const {return gatheringSpeed;}
