@@ -3,7 +3,7 @@
 #include "dwarf.h"
 #include "sheep.h"
 #include "mine.h"
-#include "fense.h"
+#include "fence.h"
 #include "dog.h"
 
 #include "sleepstate.h"
